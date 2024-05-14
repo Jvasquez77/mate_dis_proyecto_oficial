@@ -67,7 +67,7 @@
   <div class="container">
     <img class="logo" src="logo.png" alt="Linear Leap Logo">
     <h1>Bienvenido a Linear Leap</h1>
-    <p>Salta al futuro de las matematicas lineales</p>
+    <p>Salta al futuro de las matematicas lineales profundads</p>
     <button on:click={navigateToModule}>Comenzar</button>
     <div class="sliding-line"></div>
   </div>
