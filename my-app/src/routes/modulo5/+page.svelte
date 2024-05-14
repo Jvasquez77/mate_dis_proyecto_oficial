@@ -100,6 +100,8 @@
                     {#each initialItems as item (item.id)}
                         <div
                             class="dropzone"
+                            role="button"
+                            tabindex="0" 
                             on:dragover={allowDrop}
                             on:drop={(event) => drop(event, initialItems.indexOf(item))}
                             draggable="false">
@@ -107,7 +109,9 @@
                                 <div
                                     class="item"
                                     draggable="true"
-                                    on:dragstart={(event) => dragStart(event, item)}>
+                                    on:dragstart={(event) => dragStart(event, item)}
+                                    role="button"
+                                    tabindex="0"> <!-- Add tabindex attribute with value 0 -->
                                     {item.name}
                                 </div>
                             {/if}
@@ -117,6 +121,8 @@
                     {#each targetItems as item, index}
                         <div
                             class="dropzone"
+                            role="button"
+                            tabindex="0"
                             on:dragover={allowDrop}
                             on:drop={(event) => drop(event, index)}
                             draggable="false">
@@ -253,13 +259,11 @@
         color: #29b6f6; /* Azul más vibrante */
     }
     
-    .card p, .card label {
+    .card p {
         color: #b0bec5; /* Texto más claro para mejor legibilidad */
     }
     
-    .input-group {
-        margin-bottom: 20px;
-    }
+    
     
     input[type="text"] {
         width: calc(100% - 50px);
@@ -284,13 +288,7 @@
         background-color: #00acc1; /* Color más oscuro al pasar el ratón */
     }
     
-    #result {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #f5f5f5; /* Fondo claro para resultados */
-        color: #333;
-        border-radius: 4px;
-    }
+    
     /* Estilos Generales para Imágenes */
     img {
         max-width: 100%; /* Asegura que la imagen no sobrepase el ancho de su contenedor */
@@ -301,12 +299,7 @@
     }
     
     /* Estilos para Imágenes Específicas en Tarjetas */
-    .card-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto; /* Centra la imagen horizontalmente dentro de la tarjeta */
-    }
+    
     
     .button-right {
         position: fixed; /* Posición fija en la pantalla */
